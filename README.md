@@ -17,11 +17,11 @@ Drop a markdown file in `content/flavors/`. The filename becomes the URL slug (`
 ```md
 ---
 name: Original Green
-lat: 55.7558
-lng: 37.6173
-place: Kiosk near Okhotny Ryad, Russia
+lat: 35.6595
+lng: 139.7004
+place: Lawson, Shibuya, Japan
 # Local time of the photo / purchase (timezone of the place, not yours)
-capturedAt: "2024-06-12T14:30:00+03:00"
+capturedAt: "2024-06-12T14:30:00+09:00"
 photo: /cans/original.jpg
 accent: "#95F204"
 notes: Dense, sweet, grapefruit finish.

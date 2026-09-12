@@ -23,6 +23,13 @@ export const metadata: Metadata = {
   },
   description:
     "A log of Monster cans: where they were found, when, photos, and a world map.",
+  icons: {
+    icon: [
+      { url: "/favicon.svg", type: "image/svg+xml" },
+      { url: "/favicon.ico", sizes: "32x32" },
+    ],
+    apple: "/apple-touch-icon.png",
+  },
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
