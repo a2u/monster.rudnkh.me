@@ -1,69 +1,49 @@
-import Image from "next/image";
-import styles from "./page.module.css";
+import { AppFrame } from "@/components/AppFrame";
+import { FlavorCard } from "@/components/FlavorCard";
+import { getFlavors } from "@/data/loadFlavors";
+import { Layout, LayoutContent, VStack } from "@astryxdesign/core/Layout";
+import { Grid } from "@astryxdesign/core/Grid";
+import { Heading, Text } from "@astryxdesign/core/Text";
+import { VisuallyHidden } from "@astryxdesign/core/VisuallyHidden";
+import { EmptyState } from "@astryxdesign/core/EmptyState";
 
-export default function Home() {
+export default function HomePage() {
+  const flavors = getFlavors();
+
   return (
-    <div className={styles.page}>
-      <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className={styles.intro}>
-          <h1>
-            To get started, edit the{" "}
-            <code className={styles.code}>page.tsx</code> file.
-          </h1>
-          <p>
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className={styles.logo}
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={14}
-            />
-            Deploy Now
-          </a>
-          <a
-            className={styles.secondary}
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
+    <AppFrame>
+      <div className="page-gutter">
+      <Layout height="auto" contentWidth={1120} padding={0}>
+        <LayoutContent padding={0}>
+          <VStack gap={8}>
+            <VStack gap={3}>
+              <VisuallyHidden>
+                <Heading level={1}>Monster Tracker</Heading>
+              </VisuallyHidden>
+              <Text color="secondary">
+                Each can is a pin on the map. A card keeps the place, the time,
+                and a photo.
+              </Text>
+              <Text type="supporting" color="secondary">
+                {flavors.length} flavors
+              </Text>
+            </VStack>
+            {flavors.length === 0 ? (
+              <EmptyState
+                title="No flavors yet"
+                description="Add a markdown file to content/flavors to create a card."
+              />
+            ) : (
+              <Grid gap={5} columns={{ minWidth: 260 }}>
+                {flavors.map((flavor) => (
+                  <FlavorCard key={flavor.slug} flavor={flavor} />
+                ))}
+              </Grid>
+            )}
+          </VStack>
+        </LayoutContent>
+      </Layout>
+      </div>
+    </AppFrame>
   );
 }

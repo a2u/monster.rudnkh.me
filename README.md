@@ -1,36 +1,55 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Monster Tracker
 
-## Getting Started
+A log of Monster flavors: a card per taste, plus a world map of finds.
 
-First, run the development server:
+Built with [Astryx](https://github.com/facebook/astryx) (Neutral theme) and Next.js.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## Pages
+
+- **Flavors** — card grid with photo, series, place, and date
+- **Flavor card** — GPS, tasting notes, date/time, photo, mini-map
+- **World map** — pins that open flavor cards
+
+## Add a flavor
+
+Drop a markdown file in `content/flavors/`. The filename becomes the URL slug (`original.md` → `/flavors/original`). Put photos in `public/cans/`.
+
+```md
+---
+name: Original Green
+series: Original
+lat: 55.7558
+lng: 37.6173
+place: Kiosk near Okhotny Ryad, Russia
+# Local time of the photo / purchase (timezone of the place, not yours)
+capturedAt: "2024-06-12T14:30:00+03:00"
+photo: /cans/original.jpg
+accent: "#95F204"
+notes: Dense, sweet, grapefruit finish.
+---
+
+Tasting notes go here. This body text is the main description on the card.
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+`series` is one of `Original`, `Ultra`, `Juice`, or `Other`. Put the full location in `place`.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+`capturedAt` is local time where the can was bought / the photo was taken:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+`"YYYY-MM-DDTHH:MM:SS+HH:MM"` — 24-hour clock, offset of that place (Germany summer `+02:00`, winter `+01:00`). The site shows that clock time as written, it does not convert to your laptop timezone.
 
-## Learn More
+## Run
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+npm install
+npm run dev
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Open [http://localhost:3000](http://localhost:3000).
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Static site
 
-## Deploy on Vercel
+```bash
+npm run build
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Ready HTML lands in `docs/` (and `out/`). GitHub Pages: **Settings → Pages → Deploy from a branch → `main` / `/docs`**. Custom domain is `monster.rudnkh.me` (`CNAME` in `docs/`).
