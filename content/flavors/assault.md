@@ -1,6 +1,5 @@
 ---
 name: Monster Energy Assault
-series: Original
 lat: 49.96402
 lng: 7.76894
 place: Somewhere at a gas station, Germany

@@ -1,9 +1,6 @@
-export type FlavorSeries = "Original" | "Ultra" | "Juice" | "Other";
-
 export type Flavor = {
   slug: string;
   name: string;
-  series: FlavorSeries;
   description: string;
   notes: string;
   foundAt: {

@@ -1,6 +1,5 @@
 ---
 name: Monster Energy Ultra Fiesta
-series: Original
 lat: 50.98829
 lng: 6.99220
 place: Köln, Germany

@@ -3,10 +3,9 @@ import "server-only";
 import fs from "node:fs";
 import path from "node:path";
 import matter from "gray-matter";
-import type { Flavor, FlavorSeries } from "@/data/types";
+import type { Flavor } from "@/data/types";
 
 const FLAVORS_DIR = path.join(process.cwd(), "content/flavors");
-const SERIES: FlavorSeries[] = ["Original", "Ultra", "Juice", "Other"];
 
 export function getFlavors(): Flavor[] {
   if (!fs.existsSync(FLAVORS_DIR)) return [];
@@ -41,7 +40,6 @@ function readFlavor(file: string): Flavor {
   return {
     slug,
     name: asString(data.name, slug),
-    series: asSeries(data.series),
     description: content.trim() || asString(data.description),
     notes: asString(data.notes),
     foundAt: {
@@ -72,8 +70,3 @@ function asNumber(value: unknown): number {
   return 0;
 }
 
-function asSeries(value: unknown): FlavorSeries {
-  return SERIES.includes(value as FlavorSeries)
-    ? (value as FlavorSeries)
-    : "Other";
-}

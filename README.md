@@ -6,7 +6,7 @@ Built with [Astryx](https://github.com/facebook/astryx) (Neutral theme) and Next
 
 ## Pages
 
-- **Flavors** — card grid with photo, series, place, and date
+- **Flavors** — card grid with photo, place, and date
 - **Flavor card** — GPS, tasting notes, date/time, photo, mini-map
 - **World map** — pins that open flavor cards
 
@@ -17,7 +17,6 @@ Drop a markdown file in `content/flavors/`. The filename becomes the URL slug (`
 ```md
 ---
 name: Original Green
-series: Original
 lat: 55.7558
 lng: 37.6173
 place: Kiosk near Okhotny Ryad, Russia
@@ -31,7 +30,7 @@ notes: Dense, sweet, grapefruit finish.
 Tasting notes go here. This body text is the main description on the card.
 ```
 
-`series` is one of `Original`, `Ultra`, `Juice`, or `Other`. Put the full location in `place`.
+Put the full location in `place`.
 
 `capturedAt` is local time where the can was bought / the photo was taken:
 
