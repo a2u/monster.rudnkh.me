@@ -1,7 +1,7 @@
-:HL["/_next/static/chunks/0q-k7o_6rdvne.css","style"]
+:HL["/_next/static/chunks/2kr6q9p3pgae-.css","style"]
 :HL["/_next/static/chunks/1qoodycxkk3lg.css","style"]
 :HL["/_next/static/chunks/2gdkfxcnw1n3n.css","style"]
 :HL["/_next/static/media/051742360c26797e-s.p.1bkzbscqrt8rl.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
 :HL["/_next/static/media/f7aa21714c1c53f8-s.p.0-95eo-012xnf.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
 :HL["/cans/viking-berry.jpg","image"]
-0:{"tree":{"name":"","param":null,"prefetchHints":4176,"slots":{"children":{"name":"flavors","param":null,"prefetchHints":4192,"slots":{"children":{"name":"slug","param":{"type":"d","key":"viking-berry","siblings":[]},"prefetchHints":4192,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":4256,"slots":null}}}}}}},"staleTime":300,"buildId":"xTpVFUuNraY31sEE8xIpc"}
+0:{"tree":{"name":"","param":null,"prefetchHints":4176,"slots":{"children":{"name":"flavors","param":null,"prefetchHints":4192,"slots":{"children":{"name":"slug","param":{"type":"d","key":"viking-berry","siblings":[]},"prefetchHints":4192,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":4256,"slots":null}}}}}}},"staleTime":300,"buildId":"Go0MD5x1IBq6Z_00Sgo7f"}
